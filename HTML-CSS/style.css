@@ -1,0 +1,102 @@
+body {
+  background-color: rgb(253, 251, 251);
+  padding-left: 5px;
+  max-width: 1433px;
+}
+
+#cabecalho {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(157, 176, 177);
+  padding: 5px;
+}
+
+#minha_foto {
+  width: 80%;
+  border: black solid 1px;
+  margin: 5px;
+}
+
+#name {
+  font-family: Courier, monospace;
+  font-size: 30px;
+  text-align: left;
+}
+
+#apresentacao {
+  width: 90%;
+  margin-top: 150px;
+  border: solid black 1px;
+}
+
+#apresetacao td {
+  width: 50%;
+}
+
+.listas_aprendizados {
+  width: 87%;
+  border: solid black 1px;
+  margin: 50px 1px;
+  padding: 10px;
+}
+
+p {
+  line-height: 30px;
+}
+
+li {
+  line-height: 30px;
+}
+
+.titulos_secundarios {
+  color: darkolivegreen;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+.lado-esquerdo {
+  float: left;
+  border: black solid 1px;
+  padding: 0 5%;
+}
+
+.lado-direito {
+  float: right;
+  border: black solid 1px;
+  margin: 0% 20%;
+  padding: 0 5%;
+}
+
+table #tabela {
+  width: 87%;
+}
+
+#tabela th {
+  background-color: darkslategrey;
+  color: white;
+  width: 10%;
+}
+
+#relatos th {
+  width: 50%;
+  text-align: left;
+}
+
+
+#tabela td:nth-child( odd ) {
+  background-color: rgb(151, 185, 181);
+}
+
+#lista_contato li {
+  display: inline;
+  padding: 0 30px;
+}
+
+footer {
+  border: black solid 1px;
+  padding: 0 20px;
+  margin-top: 15px;
+  width: 87%;
+}
