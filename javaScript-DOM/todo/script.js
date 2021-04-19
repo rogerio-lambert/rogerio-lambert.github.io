@@ -1,3 +1,6 @@
+// Este site pode ser visto rodando na url
+// https://rogerio-lambert.github.io/javaScript-DOM/todo/toDoList.html
+//
 // Bloco de inicialização de variáveis globais
 
 const addTaskButton = document.getElementById('criar-tarefa');
@@ -8,6 +11,7 @@ const saveButton = document.getElementById('salvar-tarefas');
 const removeCompletedButton = document.getElementById('remover-finalizados');
 const moveUpButton = document.getElementById('mover-cima');
 const moveDownButton = document.getElementById('mover-baixo');
+const removeTaskButton = document.getElementById('remover-selecionado');
 let selectedTask = null;
 
 // bloco de declaração de funções
@@ -69,18 +73,14 @@ function saveTaskList() {
 // Esta função move uma tarefa selecionada uma posição para cima
 function moveTaskUp() {
   if (selectedTask !== null && selectedTask.previousElementSibling !== null) {
-    let previousTask = document.createElement('li');
-    previousTask = selectedTask.previousElementSibling;
-    taskList.insertBefore(selectedTask, previousTask);
+    taskList.insertBefore(selectedTask, selectedTask.previousElementSibling);
   }
 }
 
 // Esta função move uma tarefa selecionada uma posição para baixo
 function moveTaskDown() {
   if (selectedTask !== null && selectedTask.nextElementSibling !== null) {
-    let nextTask = document.createElement('li');
-    nextTask = selectedTask.nextElementSibling;
-    taskList.insertBefore(nextTask, selectedTask);
+    taskList.insertBefore(selectedTask.nextElementSibling, selectedTask);
   }
 }
 
@@ -97,6 +97,12 @@ function recoverySavedTaskList() {
   }
 }
 
+// Esta função remove o tarefa selecionada
+
+function removeTask() {
+  taskList.removeChild(selectedTask);
+}
+
 // Bloco de criação de escutadores de eventos
 
 addTaskButton.addEventListener('click', addTask);
@@ -105,6 +111,7 @@ removeCompletedButton.addEventListener('click', removeCompletedTasks);
 saveButton.addEventListener('click', saveTaskList);
 moveUpButton.addEventListener('click', moveTaskUp);
 moveDownButton.addEventListener('click', moveTaskDown);
+removeTaskButton.addEventListener('click', removeTask);
 
 // Bloco de ações de inicialização da página
 

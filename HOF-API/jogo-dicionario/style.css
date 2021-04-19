@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  border: 0;
+  display: 'none';
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
+  background-color: black;
+  color:aliceblue;
+  justify-content:baseline;
+  height:100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items:initial;
+  position: absolute;
+  flex-basis: 100%;
+  z-index: 0;
+}
+
+#mainConteiner {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.wordItem {
+  display: none;
+}
+
+#abertura{
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  border: 0;
+  flex-basis: 100%;
+}
+
+.meaning {
+  margin: 5px;
+  flex-basis:content;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: baseline;
+  font-size: larger;
+  height:fit-content;
+}
+
+.meaning:hover {
+  background-color: rgb(233, 220, 204);
+}
+
+#meanings {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-content: stretch; 
+  align-items: stretch;
+  flex-basis: 60%;
+}
+
+#interaction {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  flex-basis: 35%;
+}
+
+#textInteraction {
+  color:darkslategrey;
+  position: absolute;
+  width: 30%;
+  top: 0px;
+  left: 40px;
+  margin: 30px 0;
+  font-size: large;
+  background-color: none;
+}
+
+b {
+  font-size: x-large;
+  color: coral;
+  text-decoration: underline;
+}
+
+#result {
+  margin: 30px;
+  display: flex;
+  flex-basis: 300;
+  flex-direction: column;
+}
+
+.showed {
+  color: blue;
+  font-size: larger;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+#start-button {
+  display: none;
+}
+
+#litleBook {
+  margin: 10px ;
+}
