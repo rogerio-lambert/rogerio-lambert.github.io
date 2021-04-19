@@ -10,15 +10,12 @@ let played = false;
 // A função getWordMeaning resgata uma palavra de forma randòmicano dicionário
 // e busca o seu significado na mesma API, retornando um objeto com estas informações
 async function getWordMeaning() {
-  console.log('começou a rodar');
   const word = await fetch('https://api.dicionario-aberto.net/random')
     .then((result) => result.json())
     .then((result) => result.word);
-  console.log(word);
   let meaning = await fetch(`https://api.dicionario-aberto.net/word/${word}`)
     .then((result) => result.json())
   meaning = meaning[0].xml.split('<def>')[1].split('</def>')[0];
-  console.log(meaning);
   return {word, meaning};
 }
 
@@ -37,8 +34,6 @@ const adjustLayout = () => {
 const testAnswer = (event) => {
   if (!played) {
     event.target.style.border = 'solid red 4px';
-
-    console.log(event.target.className.includes('right'), event.target.className);
     if (event.target.className.includes('right')) {
       litleBook.src = 'bookhappy.png';
       textInteraction.innerHTML = 'Parabéns vocé acertou!!<br>Como você é inteligente!<br>Quero ver você acertar de novo!';
@@ -57,7 +52,6 @@ const createMeaningsElements = (words) => {
   const order = [0, 1, 2, 3];
   order.sort(() => Math.random() - Math.random());
   order.reverse();  
-  console.log(order);
   litleBook.src = 'bookIntro.png';
   textInteraction.innerHTML = `Quero ver se você é esperto como eu!<br> Qual é a significado da palavra <br>   <b> ${words[0].word} </b> ?`
    for (let index = 0; index < words.length; index += 1) {
