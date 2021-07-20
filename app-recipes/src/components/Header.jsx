@@ -13,8 +13,8 @@ function Header() {
   // fonte: https://flexiple.com/javascript-capitalize-first-letter/#:~:text=To%20capitalize%20the%20first%20character,()%20function%20to%20capitalize%20it.
 
   return (
-    <div className="Header">
-      <Link to="/perfil">
+    <header className="Header">
+      <Link to="/perfil" className="container-icon">
         <img
           data-testid="profile-top-btn"
           src={ profileIcon }
@@ -22,13 +22,13 @@ function Header() {
           className="explore-icon"
         />
       </Link>
-      <h3 className="explore" data-testid="page-title">
+      <h3 className="title" data-testid="page-title">
         { location.pathname === '/comidas'
         || location.pathname === '/bebidas'
           ? `${titleCapitalize}` : 'Explorar Origem' }
       </h3>
       <button
-        className="exploreBtn"
+        className="container-icon"
         type="button"
         onClick={ (() => setShowSearchBar(!showSearchBar)) }
       >
@@ -39,7 +39,7 @@ function Header() {
           className="explore-icon"
         />
       </button>
-    </div>
+    </header>
   );
 }
 
