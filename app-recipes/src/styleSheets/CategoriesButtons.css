@@ -1,0 +1,24 @@
+.category-button {
+  border: none;
+  border-radius: 0 10px 10px 0;
+}
+
+.text-button {
+  justify-self: start;
+  writing-mode: vertical-rl;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+}
+
+.selected {
+  background-color: antiquewhite;
+}
+
+.start-button {
+  bottom: 0;
+  position: fixed;
+}

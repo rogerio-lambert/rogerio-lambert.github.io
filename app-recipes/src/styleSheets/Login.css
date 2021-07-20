@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap') ;
+
+.loginScreen {
+  align-items: center;
+  background-image: url('../images/backgroundLogin.png');
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  justify-content: space-between;
+  margin: 0;
+  width: 360px;
+
+}
+
+.login-title {
+  color: white;
+  font-family: Comic Neue , cursive;
+  margin-left: 40px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.form {
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: Comic Neue , cursive;
+  margin-bottom: 200px;
+  margin-left: 40px;
+  width: 250px;
+}
+
+.input-login {
+  background-color: transparent;
+  border: none;
+  border-bottom: black 1px solid;
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  width: 90%;
+}
+
+.loginBtn {
+  background-color: black;
+  border-radius: 0  0 20px 20px;
+  color: white;
+  padding: 5px;
+  width: 100%;
+}
