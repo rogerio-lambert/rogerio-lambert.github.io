@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styleSheets/ContentDetail.css';
 
 export default function Video({ recipe }) {
   function getYouTubeURL() {
@@ -11,14 +12,15 @@ export default function Video({ recipe }) {
   }
 
   return (
-    <div>
-      <h3>Vídeo</h3>
+    <section className="container-content">
+      <h3 className="title-content">Vídeo</h3>
       <iframe
         src={ getYouTubeURL() }
         title="recipe video"
         data-testid="video"
+        className="field-content"
       />
-    </div>
+    </section>
   );
 }
 

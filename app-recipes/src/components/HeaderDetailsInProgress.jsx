@@ -5,6 +5,7 @@ import ButtonFavorite from './ButtonFavorite';
 import ContextRecipes from '../context/ContextRecipes';
 import ButtonShare from './ButtonShare';
 import CustonAlert from './CustonAlert';
+import '../styleSheets/HeaderDetailsInProgress.css';
 
 function HeaderDetailsInProgress(props) {
   const { recipe } = props;
@@ -14,15 +15,16 @@ function HeaderDetailsInProgress(props) {
   const type = pathname.includes('comidas') ? 'Meal' : 'Drink';
   const url = pathname.includes('comidas') ? 'comidas' : 'bebidas';
   return (
-    <header>
+    <header className="container-header-detail">
       <img
         src={ recipe[`str${type}Thumb`] }
         data-testid="recipe-photo"
         width="200px"
         alt="recipe details"
+        className="image-recipe"
       />
-      <div>
-        <h2 data-testid="recipe-title">
+      <div className="container-info">
+        <h2 data-testid="recipe-title" className="title-header">
           { recipe[`str${type}`] }
         </h2>
         <ButtonShare
@@ -38,7 +40,7 @@ function HeaderDetailsInProgress(props) {
         />
       </div>
 
-      <p data-testid="recipe-category">
+      <p data-testid="recipe-category" className="category-name">
         { url === 'comidas' ? recipe.strCategory : recipe.strAlcoholic }
       </p>
     </header>

@@ -1,9 +1,8 @@
 .content-container {
   display: flex;
-
 }
 
-.recipe-cards-container {
+.ingredients-container {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
@@ -12,11 +11,17 @@
   width: 90vw;
 }
 
-.main-container {
+.byingredients-container {
   background-image: url('../images/openedBook.png');
   display: flex;
   flex-direction: column;
   padding-bottom: 45px;
   padding-top: 45px;
   width: inherit;
+}
+
+.ingredient-button {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
 }

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap') ;
+
+.container-profile {
+  align-items: center;
+  background-image: url('../images/fullScreenBook.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 640px;
+  padding: 50px 0;
+}
+
+.navegate-buttons {
+  align-items: center;
+  background-color: #fef0c8;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px 2px gray;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: Comic Neue , cursive;
+  font-size: 24px;
+  font-weight: 700;
+  height: 80px;
+  justify-content: center;
+  margin-left: 10px;
+  width: 250px;
+}
+
+.exit-button {
+  background-color: rgb(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-family: Comic Neue , cursive;
+  font-size: 24px;
+  font-weight: 700;
+  height: 60px;
+  width: 250px;
+}
+
+.user-email {
+  color: black;
+  font-family: Handlee , cursive;
+  font-size: 30px;
+  margin: 0 6px 10px;
+  max-width: 80%;
+}

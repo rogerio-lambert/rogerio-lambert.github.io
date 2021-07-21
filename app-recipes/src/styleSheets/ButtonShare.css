@@ -1,4 +1,6 @@
 .button-share {
   background-color: transparent;
   border: none;
+  flex-basis: 1;
+  height: fit-content;
 }

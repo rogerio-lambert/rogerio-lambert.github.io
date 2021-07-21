@@ -43,7 +43,14 @@ function CardDoneAndFavorite(props) {
   const dbType = type === 'comida' ? 'themealdb' : 'thecocktaildb';
   const pathDetail = type === 'comida' ? 'comidas' : 'bebidas';
   const doneDateElement = local === 'feitas'
-    ? (<span data-testid={ `${index}-horizontal-done-date` }>{recipe.doneDate}</span>)
+    ? (
+      <span
+        data-testid={ `${index}-horizontal-done-date` }
+        className="done-date"
+      >
+        {`Feita em: ${recipe.doneDate}`}
+      </span>
+    )
     : '';
   const tagsInfo = local === 'feitas' ? recipe.tags : [];
   const tagsElements = tagsInfo.reduce((acc, tagName, index2) => {
@@ -93,9 +100,9 @@ function CardDoneAndFavorite(props) {
         />
       </Link>
       <div
-        className="info-card"
+        className="info-done-card"
       >
-        <div>
+        <div className="first-line-donecard">
           { custonElement }
           <ButtonShare
             idRecipe={ id }
@@ -115,12 +122,15 @@ function CardDoneAndFavorite(props) {
         </Link>
         {local === 'feitas' && doneDateElement}
         <div>{local === 'feitas' && tagsElements}</div>
-        {local === 'favoritas'
-          && <ButtonFavorite
-            idRecipe={ id }
-            dbType={ dbType }
-            testid={ `${index}-horizontal-favorite-btn` }
-          />}
+        <div className="favorite-icon-card">
+          {local === 'favoritas'
+            && <ButtonFavorite
+              idRecipe={ id }
+              dbType={ dbType }
+              testid={ `${index}-horizontal-favorite-btn` }
+            />}
+        </div>
+
       </div>
     </section>
   );

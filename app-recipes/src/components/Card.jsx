@@ -18,12 +18,15 @@ function Card(props) {
       onKeyPress={ sendToDetail }
       data-testid={ testid.card }
     >
-      <img
-        src={ src }
-        alt={ `Recipe of ${title}` }
-        className="image-card"
-        data-testid={ testid.image }
-      />
+      <div className="container-image">
+        <img
+          src={ src }
+          alt={ `Recipe of ${title}` }
+          className="image-card"
+          data-testid={ testid.image }
+        />
+      </div>
+
       <h3 className="title-card" data-testid={ testid.title }>{ title }</h3>
     </section>
   );

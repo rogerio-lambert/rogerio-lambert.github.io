@@ -5,7 +5,7 @@ import '../styleSheets/NavegateButtons.css';
 function NavegateButtons() {
   const { setFilter } = useContext(ContextRecipes);
   return (
-    <nav>
+    <nav className="container-navegate-buttons">
       <button
         type="button"
         data-testid="filter-by-all-btn"

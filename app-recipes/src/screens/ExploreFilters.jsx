@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import FooterBar from '../components/FooterBar';
 import HeaderExplore from '../components/HeaderExplore';
 import fetchRandomRecipe from '../service/fetchRandomRecipe';
+import '../styleSheets/ExploreFilters.css';
 
 function ExploreFilters() {
   const { pathname } = useLocation();
@@ -17,16 +18,18 @@ function ExploreFilters() {
     <Link
       to={ `${pathname}/area` }
       data-testid="explore-by-area"
+      className="filter-explore"
     >
       Por Local de Origem
     </Link>
   );
   return (
-    <main>
+    <main className="container-explore-filters">
       <HeaderExplore />
       <Link
         to={ `${pathname}/ingredientes` }
         data-testid="explore-by-ingredient"
+        className="filter-explore"
       >
         Por Ingredientes
       </Link>
@@ -36,6 +39,7 @@ function ExploreFilters() {
       <Link
         to={ `${pathname.slice(typePosition)}/${id}` }
         data-testid="explore-surprise"
+        className="filter-explore"
       >
         Me Surpreenda!
       </Link>

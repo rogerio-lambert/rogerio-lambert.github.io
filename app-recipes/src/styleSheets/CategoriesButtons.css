@@ -1,24 +1,39 @@
-.category-button {
-  border: none;
-  border-radius: 0 10px 10px 0;
-}
-
-.text-button {
-  justify-self: start;
-  writing-mode: vertical-rl;
-}
-
-.categories-container {
-  display: flex;
-  flex-direction: column;
-  width: 40px;
-}
-
-.selected {
-  background-color: antiquewhite;
-}
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap') ;
 
 .start-button {
   bottom: 0;
   position: fixed;
+}
+
+.category-button {
+  align-items: center;
+  background-color: #fef0c8c1;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+  padding-top: 10px;
+}
+
+.text-button {
+  align-items: center;
+  display: flex;
+  font-family: Comic Neue , cursive;
+  font-size: 14px;
+  font-weight: 400;
+  justify-content: center;
+  width: 100%;
+  writing-mode: vertical-rl;
+}
+
+.categories-container {
+  border-left: #edede1 solid 3px;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+}
+
+.selected {
+  background-color: #ffb900c1;
 }

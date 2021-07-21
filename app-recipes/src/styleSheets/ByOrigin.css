@@ -1,0 +1,42 @@
+.dropdown-container {
+  align-items: center;
+  background-color: #fef0c8c1;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5px;
+  padding-top: 50px;
+  position: absolute;
+  top: 0;
+  width: inherit;
+}
+
+.byorigin-container {
+  background-image: url('../images/openedBook.png');
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 45px;
+  width: inherit;
+}
+
+.byorigin-cards-container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 30px;
+  padding-top: 100px;
+  width: 90vw;
+}
+
+.dropdown {
+  background-color: #ffffffc1;
+  border: none;
+  border-radius: 15px;
+  font-family: Comic Neue , cursive;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  padding-left: 10px;
+  width: 70%;
+}

@@ -15,6 +15,7 @@ import NavegateButtons from '../components/NavegateButtons';
 import CardDoneAndFavorite from '../components/CardDoneAndFavorite';
 import ContextRecipes from '../context/ContextRecipes';
 import CustonAlert from '../components/CustonAlert';
+import '../styleSheets/DoneAndFavorites.css';
 
 function DoneAndFavorites() {
   const { activeFilter, alertOn,
@@ -34,18 +35,21 @@ function DoneAndFavorites() {
   }, [local, activeFilter, setUpadateFlag, updateFlag]);
 
   return (
-    <main>
+    <main className="done-favorite-container">
       <HeaderRecipes />
       <NavegateButtons />
       {alertOn && <CustonAlert message="Link copiado!" />}
-      {renderedCards.map((recipe, index) => (
-        <CardDoneAndFavorite
-          key={ index }
-          recipe={ recipe }
-          local={ local }
-          index={ index }
-        />
-      ))}
+      <section className="container-cards-done">
+        {renderedCards.map((recipe, index) => (
+          <CardDoneAndFavorite
+            key={ index }
+            recipe={ recipe }
+            local={ local }
+            index={ index }
+          />
+        ))}
+      </section>
+
     </main>
   );
 }

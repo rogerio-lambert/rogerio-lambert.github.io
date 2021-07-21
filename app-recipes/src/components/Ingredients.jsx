@@ -5,6 +5,7 @@ import ContextRecipes from '../context/ContextRecipes';
 import checkIngredientIsDone from '../service/checkIngredientIsDone';
 import checkRecipeIsCompleted from '../service/checkRecipeIsCompleted';
 import toogleInProgressIngrLS from '../service/toogleInProgressIngrLS';
+import '../styleSheets/ContentDetail.css';
 
 function Ingredients({ recipe }) {
   const { pathname } = useLocation();
@@ -14,24 +15,30 @@ function Ingredients({ recipe }) {
   const id = dbType === 'meals' ? recipe.idMeal : recipe.idDrink;
   const isInProgress = pathname.includes('in-progress');
   const recipeEntries = Object.entries(recipe);
-
   const measuresList = [];
-  const ingredientsList = recipeEntries ? recipeEntries.reduce((acc, enter) => {
-    if (enter[0]
-      .includes('Ingredient') && enter[1] !== '' && enter[1]) acc.push(enter[1]);
-    if (enter[0]
-      .includes('Measure') && enter[1] !== '' && enter[1]) measuresList.push(enter[1]);
-    return acc;
-  }, []) : [];
+  const ingredientsList = [];
+
+  if (recipeEntries.length > 0) {
+    recipeEntries.forEach((enter) => {
+      if (enter[0]
+        .includes('Ingredient') && enter[1] !== '' && enter[1]) {
+        ingredientsList.push(enter[1]);
+      }
+      if (enter[0]
+        .includes('Measure') && enter[1] !== '' && enter[1]) {
+        measuresList.push(enter[1]);
+      }
+    });
+  }
 
   useEffect(() => {
     setIsCompleted(checkRecipeIsCompleted(dbType, id, ingredientsList));
   }, [flagUpdate]);
 
   return (
-    <div>
-      <h3>Ingredientes:</h3>
-      <ul>
+    <section className="container-content">
+      <h3 className="title-content">Ingredientes:</h3>
+      <ul className="field-content">
         {ingredientsList.map((ingredient, index) => {
           const isDone = checkIngredientIsDone(dbType, id, ingredient);
           const decoration = isDone && isInProgress ? 'line-through' : 'none';
@@ -43,24 +50,28 @@ function Ingredients({ recipe }) {
                 setFlagUpdate(!flagUpdate);
               } }
               checked={ isDone }
+              className="marker"
             />);
           return (
-            <div key={ index } data-testid={ `${index}-ingredient-step` }>
+            <div
+              key={ index }
+              data-testid={ `${index}-ingredient-step` }
+              className="ingredient"
+            >
               {isInProgress && checkbox}
-
               <li
                 key={ index }
                 data-testid={ `${index}-ingredient-name-and-measure` }
                 style={ { 'text-decoration': decoration } }
               >
-                {`${ingredient} - ${measuresList[index]}`}
+                {`- ${ingredient} - ${measuresList[index]}`}
               </li>
             </div>
           );
         })}
 
       </ul>
-    </div>
+    </section>
   );
 }
 

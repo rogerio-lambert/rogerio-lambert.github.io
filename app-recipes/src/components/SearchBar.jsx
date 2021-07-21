@@ -31,47 +31,57 @@ function SearchBar() {
 
   return (
     /* Renderiza uma barra de busca com filtros */
-    <div>
-      <input type="text" data-testid="search-input" onChange={ handleChangeSearch } />
-
-      <label htmlFor="ingredient" className="font">
+    <form className="searchbar-container">
+      <div className="inputs-container">
         <input
-          name="option"
-          type="radio"
-          id="ingredient"
-          data-testid="ingredient-search-radio"
-          value="ingrediente"
-          onChange={ handleChangeRadio }
-          className="radio-ingredient"
+          type="text"
+          data-testid="search-input"
+          onChange={ handleChangeSearch }
+          className="input-text"
+          placeholder="Buscar Receita"
         />
-        Ingrediente
-      </label>
+        <div className="radios-container">
+          <label htmlFor="ingredient" className="label-radio">
+            <input
+              name="option"
+              type="radio"
+              id="ingredient"
+              data-testid="ingredient-search-radio"
+              value="ingrediente"
+              onChange={ handleChangeRadio }
+              className="radio-button"
+            />
+            Ingrediente
+          </label>
 
-      <label htmlFor="name" className="font">
-        <input
-          name="option"
-          type="radio"
-          id="name"
-          data-testid="name-search-radio"
-          value="nome"
-          onChange={ handleChangeRadio }
-          className="radio-name"
-        />
-        Nome
-      </label>
+          <label htmlFor="name" className="label-radio">
+            <input
+              name="option"
+              type="radio"
+              id="name"
+              data-testid="name-search-radio"
+              value="nome"
+              onChange={ handleChangeRadio }
+              className="radio-button"
+            />
+            Nome
+          </label>
 
-      <label htmlFor="firstLetter" className="font">
-        <input
-          name="option"
-          type="radio"
-          id="firstLetter"
-          data-testid="first-letter-search-radio"
-          onChange={ handleChangeRadio }
-          value="primeira-letra"
-          className="radio-fletter"
-        />
-        Primeira letra
-      </label>
+          <label htmlFor="firstLetter" className="label-radio">
+            <input
+              name="option"
+              type="radio"
+              id="firstLetter"
+              data-testid="first-letter-search-radio"
+              onChange={ handleChangeRadio }
+              value="primeira-letra"
+              className="radio-button"
+            />
+            Primeira letra
+          </label>
+        </div>
+
+      </div>
 
       <button
         type="button"
@@ -86,7 +96,7 @@ function SearchBar() {
       >
         Buscar
       </button>
-    </div>
+    </form>
   );
 }
 export default SearchBar;

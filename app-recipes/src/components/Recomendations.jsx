@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 import fetchRecomendations from '../service/fetchRecomendations';
-import '../styleSheets/Recomendations.css';
+import '../styleSheets/ContentDetail.css';
 
 function Recommendations(props) {
   const { recipe } = props;
@@ -22,9 +22,9 @@ function Recommendations(props) {
   }, []);
 
   return (
-    <section>
-      <h4>Recomendados</h4>
-      <div className="container">
+    <section className="container-content">
+      <h3 className="title-content">Recomendados</h3>
+      <div className="field-content">
         <div className="carousel-container">
           {
             isLoalding ? '' : recommended.reduce((acc, recom, index) => {
