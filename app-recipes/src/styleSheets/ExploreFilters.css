@@ -1,0 +1,26 @@
+.container-explore-filters {
+  align-items: center;
+  background-image: url('../images/fullScreenBook.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 640px;
+  padding: 100px 0;
+}
+
+.filter-explore {
+  align-items: center;
+  background-color: #fef0c8;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px 2px gray;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: Comic Neue , cursive;
+  font-size: 24px;
+  font-weight: 700;
+  height: 80px;
+  justify-content: center;
+  margin-left: 10px;
+  width: 250px;
+}
