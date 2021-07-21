@@ -1,9 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap') ;
+
 .title-content {
   display: flex;
+  font-family: Comic Neue , cursive;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .field-content {
   background-color: white;
   border-radius: 20px;
   display: flex;
+  flex-direction: column;
+  font-family: Handlee , cursive;
+  font-size: large;
+  padding: 10px;
+  text-align: justify;
+}
+
+.container-content {
+  padding: 10px;
+}
+
+.ingredient {
+  align-items: baseline;
+  display: flex;
+  font-family: Handlee , cursive;
+  font-size: large;
+  list-style-type: none;
+  margin-bottom: 5px;
+  width: inherit;
+}
+
+.marker {
+  margin-right: 5px;
+}
+
+.carousel-container {
+  display: flex;
+  flex-wrap: nowrap;
+  height: fit-content;
+  overflow-x: hidden;
+  width: fit-content;
 }

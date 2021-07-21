@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import PropTypes from 'prop-types';
+import ContextRecipes from '../context/ContextRecipes';
 import fetchApiById from '../service/fetchApiById';
 import Ingredients from '../components/Ingredients';
 import Recommendations from '../components/Recomendations';
@@ -8,42 +9,55 @@ import HeaderDetailsInProgress from '../components/HeaderDetailsInProgress';
 import Video from '../components/Video';
 import Instructions from '../components/Instructions';
 import ButtonStart from '../components/ButtonStart';
+import ButtonFinish from '../components/ButtonFinish';
+import '../styleSheets/DetailsInProgress.css';
 
-function RecipeDetails(props) {
+function DetailsInProgress(props) {
   const { match: { params: { id } } } = props;
+  const { isCompleted } = useContext(ContextRecipes);
   const { pathname } = useLocation();
   const [recipe, setRecipe] = useState({});
   const [isLoalding, setIsLoalding] = useState(false);
-  const type = pathname.includes('comidas') ? 'themealdb' : 'thecocktaildb';
-  const url = pathname.includes('comidas') ? 'comidas' : 'bebidas';
+  const dbType = pathname.includes('comidas') ? 'themealdb' : 'thecocktaildb';
+  const local = pathname.includes('comidas') ? 'comidas' : 'bebidas';
+  const isInProgress = pathname.includes('in-progress');
+  const buttonFinish = (
+    <ButtonFinish
+      completed={ isCompleted }
+      dbType={ dbType }
+      id={ id }
+    />
+  );
 
   useEffect(() => {
     async function requestApi() {
       setIsLoalding(true);
-      const request = await fetchApiById(type, id);
+      const request = await fetchApiById(dbType, id);
       setRecipe(request);
       setIsLoalding(false);
     }
     requestApi();
-  }, [type, id]);
+  }, [dbType, id]);
 
   return (
     <div>
       { isLoalding ? <h1>Loalding</h1>
         : (
-          <main>
+          <main className="container-main">
             <HeaderDetailsInProgress recipe={ recipe } />
-            { recipe.strMeal ? <Video recipe={ recipe } /> : null }
             <Ingredients recipe={ recipe } />
             <Instructions instructions={ recipe.strInstructions } />
-            <Recommendations recipe={ type } />
-            <ButtonStart type={ url } id={ id } />
+            { recipe.strMeal && !isInProgress ? <Video recipe={ recipe } /> : null }
+            {!isInProgress && <Recommendations recipe={ dbType } />}
+            {isInProgress
+              ? buttonFinish
+              : <ButtonStart type={ local } id={ id } />}
           </main>)}
     </div>
   );
 }
 
-RecipeDetails.propTypes = {
+DetailsInProgress.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
@@ -51,4 +65,4 @@ RecipeDetails.propTypes = {
   }).isRequired,
 };
 
-export default RecipeDetails;
+export default DetailsInProgress;

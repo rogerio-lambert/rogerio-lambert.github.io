@@ -4,8 +4,8 @@ esta função recebe dbType e retorna o id registrado no localstorage chave "inP
 
 function checkInProgressId(dbType) {
   const recipeInProgress = JSON.parse(localStorage.getItem('inProgressRecipes'));
-  const id = recipeInProgress ? Object.keys(recipeInProgress[dbType])[0] : '';
-  console.log(id);
+  console.log(recipeInProgress);
+  const id = recipeInProgress[dbType] ? Object.keys(recipeInProgress[dbType])[0] : '';
   return id;
 }
 

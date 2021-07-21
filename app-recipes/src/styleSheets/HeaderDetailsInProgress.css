@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap') ;
+
+.image-recipe {
+  border-radius: 0 0 20px 20px;
+  height: 60%;
+  max-height: 144px;
+  min-width: 360px;
+  width: inherit;
+}
+
+.container-info {
+  align-items: center;
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.container-header-detail {
+  background-color: #fef0c8;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: flex-start;
+  margin: 0;
+  min-width: 360px;
+  padding: 0;
+  width: inherit;
+}
+
+.title-header {
+  display: table-cell;
+  font-family: Comic Neue , cursive;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+  min-width: 80%;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.category-name {
+  color: #ce964a;
+  font-family: Handlee , cursive;
+  font-size: large;
+  margin: 0;
+  margin-left: 10px;
+}

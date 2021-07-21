@@ -1,14 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProviderRecipes from './context/ProviderRecipes';
 import ByIngredients from './screens/ByIngredients';
 import ByOrigin from './screens/ByOrigin';
-import RecipeDetails from './screens/RecipeDetails';
+import DetailsInProgress from './screens/DetailsInProgress';
 import Explore from './screens/Explore';
 import ExploreFilters from './screens/ExploreFilters';
-import InProgress from './screens/InProgress';
 import Login from './screens/Login';
 import DoneAndFavorites from './screens/DoneAndFavorites';
 import Main from './screens/Main';
@@ -23,19 +21,19 @@ function App() {
           <Route exact path="/" component={ Login } />
           <Route
             path="/comidas/:id/in-progress"
-            render={ (props) => <InProgress { ...props } /> }
+            render={ (props) => <DetailsInProgress { ...props } /> }
           />
           <Route
             path="/bebidas/:id/in-progress"
-            render={ (props) => <InProgress { ...props } /> }
+            render={ (props) => <DetailsInProgress { ...props } /> }
           />
           <Route
             path="/comidas/:id"
-            render={ (props) => <RecipeDetails { ...props } /> }
+            render={ (props) => <DetailsInProgress { ...props } /> }
           />
           <Route
             path="/bebidas/:id"
-            render={ (props) => <RecipeDetails { ...props } /> }
+            render={ (props) => <DetailsInProgress { ...props } /> }
           />
           <Route path="/comidas" component={ Main } />
           <Route path="/bebidas" component={ Main } />
