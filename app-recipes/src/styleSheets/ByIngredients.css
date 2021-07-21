@@ -11,7 +11,7 @@
   width: 90vw;
 }
 
-.main-container {
+.byingredients-container {
   background-image: url('../images/openedBook.png');
   display: flex;
   flex-direction: column;

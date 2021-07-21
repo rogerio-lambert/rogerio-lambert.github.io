@@ -21,7 +21,7 @@ function ByIngredients() {
   }, [type]);
 
   return (
-    <main className="main-container">
+    <main className="byingredients-container">
       <HeaderExplore />
       <section className="ingredients-container">
         {ingredients.map((ingredient, index) => {

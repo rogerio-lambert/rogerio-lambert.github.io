@@ -11,7 +11,7 @@
   width: inherit;
 }
 
-.main-container {
+.byorigin-container {
   background-image: url('../images/openedBook.png');
   display: flex;
   flex-direction: column;
@@ -19,13 +19,13 @@
   width: inherit;
 }
 
-.recipe-cards-container {
+.byorigin-cards-container {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding-left: 30px;
-  padding-top: 60px;
+  padding-top: 100px;
   width: 90vw;
 }
 

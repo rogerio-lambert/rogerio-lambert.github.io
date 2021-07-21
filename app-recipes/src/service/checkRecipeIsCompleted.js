@@ -7,7 +7,7 @@ esta função recebe um Id e o dbType de uma receita,
 function checkRecipeIsCompleted(dbType, id, ingredients) {
   const ingredientsOnLS = JSON.parse(localStorage.getItem('inProgressRecipes'));
   let isCompleted = false;
-  if (ingredientsOnLS[dbType] && Object
+  if (ingredientsOnLS && ingredientsOnLS[dbType] && Object
     .keys(ingredientsOnLS[dbType])[0] === id && ingredients) {
     isCompleted = ingredientsOnLS[dbType][id].length === ingredients.length;
   }

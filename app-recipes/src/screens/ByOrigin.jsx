@@ -27,7 +27,7 @@ function ByOrigin() {
   }, [selectedCountry]);
 
   return (
-    <main className="main-container">
+    <main className="byorigin-container">
       <Header />
       <div className="dropdown-container">
         <select
@@ -42,7 +42,7 @@ function ByOrigin() {
             </option>))}
         </select>
       </div>
-      <div className="recipe-cards-container">
+      <div className="byorigin-cards-container">
         { filteredRecipe && filteredRecipe.reduce((acc, recipe, index) => {
           const cardsLength = 12;
           if (index < cardsLength) {

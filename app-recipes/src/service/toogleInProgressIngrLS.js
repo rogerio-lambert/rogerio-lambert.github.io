@@ -11,7 +11,8 @@ Esta função recebe como parametro o tipo de banco de dados (dbType), o id da r
 function toogleInProgressIngrLS(dbType, id, ingredient) {
   const ingredientsOnLS = JSON.parse(localStorage.getItem('inProgressRecipes'));
   let ingredientsList = [ingredient];
-  if (ingredientsOnLS[dbType] && Object.keys(ingredientsOnLS[dbType])[0] === id) {
+  if (ingredientsOnLS && ingredientsOnLS[dbType] && Object
+    .keys(ingredientsOnLS[dbType])[0] === id) {
     ingredientsList = ingredientsOnLS[dbType][id]
       .filter((doneIngredient) => !doneIngredient.includes(ingredient));
     if (ingredientsList.length === ingredientsOnLS[dbType][id].length) {

@@ -1,5 +1,24 @@
 .button-navegation {
+  background-color: rgb(0, 0, 0, 0.7);
   border: none;
-  border-radius: 6px;
-  width: 50px;
+  border-radius: 20px;
+  color: white;
+  font-family: Comic Neue , cursive;
+  font-size: 24px;
+  font-weight: 700;
+  height: 40px;
+  width: 90px;
+}
+
+.container-navegate-buttons {
+  align-items: center;
+  background-color: #fef0c8c1;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  padding-top: 50px;
+  position: absolute;
+  top: 0;
+  width: inherit;
 }

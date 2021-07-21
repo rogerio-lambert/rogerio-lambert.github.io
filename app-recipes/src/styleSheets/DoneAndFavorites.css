@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap') ;
+
+
+.done-favorite-container {
+  background-image: url('../images/openedBook.png');
+  display: flex;
+  flex-direction: column;
+  min-height: 640px;
+  padding-bottom: 45px;
+  width: inherit;
+}
+
+.container-cards-done {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 40px;
+  padding-top: 120px;
+  width: 90vw;
+}
