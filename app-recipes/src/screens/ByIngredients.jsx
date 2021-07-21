@@ -5,6 +5,7 @@ import ContextRecipes from '../context/ContextRecipes';
 import FooterBar from '../components/FooterBar';
 import Card from '../components/Card';
 import HeaderExplore from '../components/HeaderExplore';
+import '../styleSheets/ByIngredients.css';
 
 function ByIngredients() {
   const { fetchByIngredients } = useContext(ContextRecipes);
@@ -20,7 +21,7 @@ function ByIngredients() {
   }, [type]);
 
   return (
-    <main>
+    <main className="main-container">
       <HeaderExplore />
       <section className="ingredients-container">
         {ingredients.map((ingredient, index) => {
@@ -35,6 +36,7 @@ function ByIngredients() {
               key={ index }
               type="button"
               onClick={ () => fetchByIngredients(ingredient.name, type) }
+              className="ingredient-button"
             >
               <Card
                 src={ ingredient.thumb }

@@ -27,3 +27,11 @@
   justify-self: center;
   margin: 0 6px 10px;
 }
+
+.container-image {
+  background-color: white;
+  border-radius: 6px 6px 0 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
