@@ -2,13 +2,13 @@
 
 .small-card {
   align-items: center;
-  background-color: white;
+  background-color: #fef0c8;
   border-radius: 6px;
-  box-shadow: 2px 2px 20px 2px gray;
+  box-shadow: 2px 2px 5px 2px gray;
   display: flex;
   flex-direction: column;
   font-family: Comic Neue , cursive;
-  height: 150px;
+  height: 170px;
   justify-content: space-between;
   margin: 4px;
   width: 135px;
