@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   height: 150px;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   width: 100%;
 }
 

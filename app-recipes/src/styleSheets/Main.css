@@ -16,6 +16,7 @@
   background-image: url('../images/openedBook.png');
   display: flex;
   flex-direction: column;
+  padding-bottom: 45px;
   padding-top: 45px;
-  width: 100%;
+  width: inherit;
 }

@@ -20,7 +20,7 @@
   padding: 0 20px;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: inherit;
   z-index: 1;
 }
 
